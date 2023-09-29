@@ -1,0 +1,35 @@
+.sidebar {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: $white;
+    border-right: 1px solid #ddd;
+
+    .sidebar-item {
+        border-radius: 4px;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        height: 28px;
+        margin-bottom: 8px;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        transition: .3s;
+        &:hover {
+            background: $fadeGray;
+        }
+        i {
+            font-size: 20px;
+        }
+        &.active {
+            background: $blue;
+            i {
+                color: $white;
+            }
+        }
+    }
+}

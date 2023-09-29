@@ -3,6 +3,7 @@
 import { getData, deleteData, createData, getDataById } from '@/core/Database/models/model';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import styles from '@/assets/css/app.module.css';
 
 interface User {
   id: number;
@@ -21,7 +22,6 @@ export default function Home() {
     try {
       const result = await getData<User>('users');
       const user = await getDataById<User>('users');
-      console.log(user)
       setData(result);
     } catch (error) {
       console.error(error);
@@ -38,17 +38,19 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className={styles.page}>
       <h1>Liste des utilisateurs</h1>
       <AddUserForm />
-      <ul>
+      <div className={styles.comp}>
         {data.map((user) => (
-          <li key={user.id}>
-            {user.name}
+          <>
+            <div key={user.id}>
+              <span>{user.name}</span>
+            </div>
             <button onClick={() => handleDeleteUser(user.id)}>Supprimer</button>
-          </li>
+          </>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-
+import "./globals.css"
+import styles from '@/assets/css/app.module.css';
+import TitleBar from '@/components/TitleBar';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        <div className={styles.app}>
+          <TitleBar />
+          <div className={styles.main}>
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   )
 }

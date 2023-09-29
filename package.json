@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tauri": "tauri"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.36.0",
+    "@tauri-apps/api": "^1.5.0",
     "dotenv": "^16.3.1",
     "next": "latest",
     "react": "latest",
@@ -17,12 +19,12 @@
     "server-only": "^0.0.1"
   },
   "devDependencies": {
-    "@types/node": "latest",
+    "@types/node": "^20.7.2",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@tauri-apps/cli": "^1.5.0",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "prisma": "^5.3.1",
     "supabase": "^1.99.5",
     "typescript": "latest"
   }

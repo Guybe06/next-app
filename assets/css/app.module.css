@@ -1,0 +1,202 @@
+.tilbar {
+  background: #fff;
+  width: calc(100% - 10px);
+  position: fixed;
+  z-index: 1000;
+  padding: 0 10px;
+  padding-right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #dee2e6;
+}
+.tilbar div.btnapp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 120px;
+}
+.tilbar div.btnapp button {
+  background: #fff;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.tilbar div.btnapp button:hover {
+  background: rgba(33, 37, 41, 0.1);
+}
+.tilbar div.btnapp button:last-child:hover {
+  background: #bf1f11;
+  color: #fff;
+}
+.tilbar div.btnapp button i {
+  color: #212529;
+}
+.tilbar div.btnapp button i.bi-square {
+  font-size: 12px;
+}
+.tilbar div.btnapp button i.bi-back {
+  font-size: 14px;
+}
+.tilbar div.btnapp button i.bi-dash-lg {
+  font-size: 16px;
+}
+.tilbar div.btnapp button i.bi-x {
+  font-size: 20px;
+}
+.tilbar .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(100% - 120px);
+}
+.tilbar .title .img {
+  height: 20px;
+  background: #fff;
+  padding: 2px;
+}
+.tilbar .title h1 {
+  color: #212529;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.app .main {
+  width: auto;
+  background: transparent;
+  position: fixed;
+  top: 45px;
+  right: 0;
+  width: calc(100% - 220px);
+  border-radius: 8px;
+  padding: 0 10px;
+  bottom: 10px;
+}
+.app .main .appTitle {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+.app .main .appTitle h2 {
+  font-weight: 600;
+  font-size: 18px;
+}
+.app .main .header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.app .main .header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  height: 45px;
+  margin-left: 4px;
+  padding: 0 8px;
+  border-radius: 8px;
+  border-top: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  box-shadow: 0 0.07rem 1px 0 rgba(0, 0, 0, 0.4);
+}
+.app .main .header div:hover {
+  background: #dee2e6;
+}
+.app .main .header div:hover:nth-child(2) span {
+  border-color: #dee2e6;
+}
+.app .main .header div:nth-child(1) {
+  width: 45px;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+}
+.app .main .header div:nth-child(1) i {
+  font-size: 20px;
+}
+.app .main .header div:nth-child(1) span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 7px;
+  border: 3px solid #fff;
+  background: #6a00f4;
+  top: 0;
+  left: 0;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.app .main .header div h2 {
+  display: flex;
+  flex-direction: column;
+  line-height: 1rem;
+  font-size: 13px;
+  font-weight: 600;
+}
+.app .main .header div h2 span {
+  font-size: 11px;
+}
+.app .main .header img {
+  width: 35px;
+  margin-right: 4px;
+  opacity: 0.8;
+}
+
+.page {
+  width: 300px;
+  background: red;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page input {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin: 10px 0;
+  width: calc(100% - (126px))
+}
+
+.page button {
+  background: #6a00f4;
+  color: #fff;
+  padding: 6px 0;
+  margin: 0 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  width: 90px;
+}
+
+.page .comp {
+  width: 100%;
+  background: yellow
+}
+
+.comp div {
+  width: 100%;
+}
+
+.page span {
+  width: calc(100% - (126px));
+}

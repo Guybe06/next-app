@@ -1,0 +1,62 @@
+.intercalaire {
+    width: calc(100vw - (320px));
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    .content {
+        background: $white;
+        border: 1px solid $fadeGray;
+        border-radius: 6px;
+        border-top-left-radius: 0;
+        padding: 10px;
+        margin-top: 30px;
+        min-height: 300px;
+        position: relative;
+    }
+}
+
+.title {
+    width: fit-content;
+    /* Largeur de la base du trapèze */
+    height: 30px;
+    /* Hauteur du trapèze */
+    background-color: $blue;
+    /* Couleur de fond */
+    position: absolute;
+    /* Pour positionner le contenu interne */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+
+    h2 {
+        z-index: 100;
+        color: $white;
+        font-weight: 500;
+    }
+
+    border-top-left-radius: 6px;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: -15px;
+    /* Décalage pour créer un côté incliné */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 15px 0 15px;
+    /* Hauteur, moitié de la base, pas de bord supérieur, moitié de la base */
+    border-color: $blue transparent transparent transparent;
+    /* Couleur du bord et transparent pour les autres côtés */
+    transform: skew(20deg);
+    transform: scaleY(-1);
+    /* Inclinaison du côté incliné */
+}
