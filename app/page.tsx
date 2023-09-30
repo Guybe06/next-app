@@ -43,14 +43,14 @@ export default function Home() {
       <h1>Liste des utilisateurs</h1>
       <AddUserForm />
       <Greet />
-      <div className={styles.comp}>
+      <div>
         {data.map((user) => (
-          <>
-            <div key={user.id}>
+          <div key={user.id} className={styles.comp}>
+            <div>
               <span>{user.name}</span>
             </div>
             <button onClick={() => handleDeleteUser(user.id)}>Supprimer</button>
-          </>
+          </div>
         ))}
       </div>
     </div>
