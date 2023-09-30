@@ -1,22 +1,35 @@
 "use client"
 
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '@/assets/css/app.module.css';
-import { appWindow } from "@tauri-apps/api/window"
+import { invoke } from '@tauri-apps/api/tauri'
 
 const TitleBar = () => {
 
+    const [minimize, setMinimize] = useState(true);
 
     const handleWindow = (type: string) => {
-        if (type === "minimize") {
-            appWindow.minimize();
+        if (type === "hide") {
+            invoke<string>('minimize_window').then(() => {
+                console.log('Fenêtre réduite!');
+            });
         }
         else if (type === "toggleMaximize") {
-            appWindow.toggleMaximize();
+            if (minimize) {
+                invoke<string>('maximize_window').then(() => {
+                    console.log('Fenêtre réduite!');
+                });
+            } else {
+                invoke<string>('unmaximize_window').then(() => {
+                    console.log('Fenêtre réduite!');
+                });
+            }
         }
         else if (type === "close") {
-            appWindow.close();
+            invoke<string>('close_window').then(() => {
+                console.log('Fenêtre réduite!');
+            });
         }
     }
 
@@ -27,8 +40,9 @@ const TitleBar = () => {
                 <h1 style={{ marginTop: 9, fontWeight: 300, fontSize: 10 }}>V0.1.0</h1>
             </div>
             <div className={styles.btnapp}>
-                <button type="button" onClick={() => { handleWindow("minimize") }}><i className="bi bi-dash-lg"></i></button>
-                <button type="button" onClick={() => { handleWindow("toggleMaximize")}}><i className="bi bi-back"></i></button>
+                <button type="button" onClick={() => { handleWindow("hide") }}><i className="bi bi-dash-lg"></i></button>
+                {!minimize && <button type="button" onClick={() => { handleWindow("toggleMaximize"); setMinimize(true) }}><i className="bi bi-back"></i></button>}
+                {minimize && <button type="button" onClick={() => { handleWindow("toggleMaximize"); setMinimize(false) }}><i className="bi bi-square"></i></button>}
                 <button type="button" onClick={() => { handleWindow("close") }}><i className="bi bi-x"></i></button>
             </div>
         </div>

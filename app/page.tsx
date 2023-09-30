@@ -4,6 +4,7 @@ import { getData, deleteData, createData, getDataById } from '@/core/Database/mo
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from '@/assets/css/app.module.css';
+import { invoke } from '@tauri-apps/api/tauri'
 
 interface User {
   id: number;
@@ -41,6 +42,7 @@ export default function Home() {
     <div className={styles.page}>
       <h1>Liste des utilisateurs</h1>
       <AddUserForm />
+      <Greet />
       <div className={styles.comp}>
         {data.map((user) => (
           <>
@@ -82,3 +84,14 @@ const AddUserForm = () => {
     </form>
   );
 };
+
+
+function Greet() {
+  useEffect(() => {
+    invoke<string>('greet', { name: 'Nextmlmllm.js' })
+      .then(console.log)
+      .catch(console.error)
+  }, [])
+
+  return <></>
+}
